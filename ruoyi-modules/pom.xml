@@ -26,6 +26,7 @@
         <!-- 新添加的数字人模块-->
         <module>ruoyi-aihuman</module>
         <module>ruoyi-workflow</module>
+        <module>ruoyi-admit</module>
     </modules>
 
     <properties>
