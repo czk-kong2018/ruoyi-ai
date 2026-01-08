@@ -55,8 +55,7 @@ public class AdmissionFullRecordVo implements Serializable {
     /**
      * 性别
      */
-    @ExcelProperty(value = "性别", converter = ExcelDictConvert.class)
-    @ExcelDictFormat(dictType = "sys_user_sex")
+    @ExcelProperty(value = "性别")
     private String gender;
     /**
      * 身份证号
