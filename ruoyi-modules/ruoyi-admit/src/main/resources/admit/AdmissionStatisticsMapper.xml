@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ruoyi.admit.mapper.AdmissionStatisticsMapper">
+
+    <!-- 从录取数据源聚合统计数据 -->
+    <select id="selectAggregatedStatsByYear" resultType="java.util.Map">
+        SELECT 
+            admission_year,
+            province,
+            subject_category,
+            major_group,
+            major_code,
+            admission_major,
+            college_name,
+            COUNT(*) as admit_count,
+            MIN(score) as min_score,
+            MAX(score) as max_score,
+            ROUND(AVG(score), 1) as avg_score,
+            MIN(score_rank) as highest_rank,
+            MAX(score_rank) as lowest_rank
+        FROM admission_full_record 
+        WHERE admission_year = #{admissionYear}
+        GROUP BY admission_year, province, subject_category, major_group, major_code, admission_major, college_name
+        ORDER By admission_year, province, subject_category, major_group, major_code, admission_major, college_name
+    </select>
+
+</mapper>
