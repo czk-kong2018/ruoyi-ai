@@ -22,7 +22,21 @@ public class AdmissionDashboardController extends BaseController {
 
     @SaCheckPermission("admit:admissionDashboard:query")
     @GetMapping("/stats")
-    public R<AdmissionDashboardStatsVo> stats(@RequestParam(required = false) Integer admissionYear) {
-        return R.ok(admissionDashboardService.queryStats(admissionYear));
+    public R<AdmissionDashboardStatsVo> stats(
+            @RequestParam(required = false) Integer admissionYear,
+            @RequestParam(required = false) String province,
+            @RequestParam(required = false) String subjectCategory) {
+        return R.ok(admissionDashboardService.queryStats(admissionYear, province, subjectCategory));
+    }
+    
+    /**
+     * 根据省份获取科类列表（用于级联下拉）
+     */
+    @SaCheckPermission("admit:admissionDashboard:query")
+    @GetMapping("/subjectCategoriesByProvince")
+    public R<java.util.List<AdmissionDashboardStatsVo.StatItem>> subjectCategoriesByProvince(
+            @RequestParam(required = false) Integer admissionYear,
+            @RequestParam(required = false) String province) {
+        return R.ok(admissionDashboardService.querySubjectCategoriesByProvince(admissionYear, province));
     }
 }

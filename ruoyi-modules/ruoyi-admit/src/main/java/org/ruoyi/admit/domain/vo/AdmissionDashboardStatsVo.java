@@ -14,6 +14,8 @@ public class AdmissionDashboardStatsVo implements Serializable {
     private List<StatItem> subjectCategoryStats;
     private List<StatItem> reportLocationStats;
     private List<StatItem> collegeStats;
+    private List<StatItem> scoreDistributionStats;
+    private List<StatItem> rankDistributionStats;
 
     @Data
     public static class Overview implements Serializable {
@@ -23,6 +25,8 @@ public class AdmissionDashboardStatsVo implements Serializable {
         private Long femaleCount;
         private Long provinceCount;
         private Long collegeCount;
+        private Long hanCount;
+        private Double hanRatio;
     }
 
     @Data
