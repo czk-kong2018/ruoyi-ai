@@ -58,5 +58,7 @@ public class SysPostBo extends BaseEntity {
      */
     private String remark;
 
+    private String belongDeptId;
+
 
 }

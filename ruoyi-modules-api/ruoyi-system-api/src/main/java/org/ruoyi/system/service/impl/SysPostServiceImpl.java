@@ -59,6 +59,7 @@ public class SysPostServiceImpl implements ISysPostService {
         lqw.like(StringUtils.isNotBlank(bo.getPostCode()), SysPost::getPostCode, bo.getPostCode());
         lqw.like(StringUtils.isNotBlank(bo.getPostName()), SysPost::getPostName, bo.getPostName());
         lqw.eq(StringUtils.isNotBlank(bo.getStatus()), SysPost::getStatus, bo.getStatus());
+        lqw.eq(StringUtils.isNotBlank(bo.getBelongDeptId()), SysPost::getCreateDept, bo.getBelongDeptId());
         lqw.orderByAsc(SysPost::getPostSort);
         return lqw;
     }

@@ -295,7 +295,7 @@ public class AdmissionDashboardServiceImpl implements AdmissionDashboardService 
     public List<AdmissionDashboardStatsVo.StatItem> querySubjectCategoriesByProvince(Integer admissionYear, String province) {
         QueryWrapper<AdmissionFullRecord> wrapper = buildBaseWrapper(admissionYear);
         if (StringUtils.isNotBlank(province)) {
-            wrapper.like("province", province);
+            wrapper.likeRight("province", province);
         }
         wrapper.select("subject_category as name", "count(*) as value");
         wrapper.isNotNull("subject_category").ne("subject_category", "");
