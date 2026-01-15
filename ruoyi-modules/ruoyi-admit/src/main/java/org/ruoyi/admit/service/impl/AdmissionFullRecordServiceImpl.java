@@ -67,13 +67,14 @@ public class AdmissionFullRecordServiceImpl implements AdmissionFullRecordServic
         lqw.likeRight(StringUtils.isNotBlank(bo.getName()), AdmissionFullRecord::getName, bo.getName());
         lqw.eq(StringUtils.isNotBlank(bo.getGender()), AdmissionFullRecord::getGender, bo.getGender());
         lqw.eq(StringUtils.isNotBlank(bo.getIdCard()), AdmissionFullRecord::getIdCard, bo.getIdCard());
-        lqw.eq(StringUtils.isNotBlank(bo.getAdmissionMajor()), AdmissionFullRecord::getAdmissionMajor, bo.getAdmissionMajor());
+        lqw.likeRight(StringUtils.isNotBlank(bo.getAdmissionMajor()), AdmissionFullRecord::getAdmissionMajor, bo.getAdmissionMajor());
         lqw.likeRight(StringUtils.isNotBlank(bo.getCollegeName()), AdmissionFullRecord::getCollegeName, bo.getCollegeName());
-        lqw.eq(StringUtils.isNotBlank(bo.getReportLocation()), AdmissionFullRecord::getReportLocation, bo.getReportLocation());
-        lqw.eq(StringUtils.isNotBlank(bo.getSubjectCategory()), AdmissionFullRecord::getSubjectCategory, bo.getSubjectCategory());
+        lqw.likeRight(StringUtils.isNotBlank(bo.getReportLocation()), AdmissionFullRecord::getReportLocation, bo.getReportLocation());
+        lqw.likeRight(StringUtils.isNotBlank(bo.getSubjectCategory()), AdmissionFullRecord::getSubjectCategory, bo.getSubjectCategory());
         lqw.likeRight(StringUtils.isNotBlank(bo.getEthnicity()), AdmissionFullRecord::getEthnicity, bo.getEthnicity());
         lqw.likeRight(StringUtils.isNotBlank(bo.getPoliticalStatus()), AdmissionFullRecord::getPoliticalStatus, bo.getPoliticalStatus());
         lqw.likeRight(StringUtils.isNotBlank(bo.getProvince()), AdmissionFullRecord::getProvince, bo.getProvince());
+        lqw.eq(StringUtils.isNotBlank(bo.getIsAdjusted()), AdmissionFullRecord::getIsAdjusted, bo.getIsAdjusted());
         return lqw;
     }
 
