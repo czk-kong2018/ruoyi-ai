@@ -13,6 +13,7 @@ import org.ruoyi.common.excel.convert.ExcelDictConvert;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 /**
@@ -136,6 +137,7 @@ public class AdmissionFullRecordVo implements Serializable {
      * 出生日期
      */
     @ExcelProperty(value = "出生日期")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
     /**
      * 毕业学校
@@ -207,6 +209,12 @@ public class AdmissionFullRecordVo implements Serializable {
      */
     @ExcelProperty(value = "生源省份")
     private String province;
+
+    /**
+     * 照片文件名
+     */
+    private String photoFilename;
+
     /**
      * 备注
      */

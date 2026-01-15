@@ -124,6 +124,8 @@ security:
     - /pay/notifyUrl
     # 上传文件
     - /resource/oss/upload
+    # 招生照片
+    - /admit/photos/**
     # 重置密码
     - /auth/reset/password
     # 聊天接口
