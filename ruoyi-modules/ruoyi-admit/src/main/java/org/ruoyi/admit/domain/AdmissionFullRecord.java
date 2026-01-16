@@ -17,13 +17,12 @@ import java.time.LocalDate;
  */
 @Data
 @TableName("admission_full_record")
-public class AdmissionFullRecord implements Serializable{
-
+public class AdmissionFullRecord implements Serializable {
 
     /**
      * 系统自增ID
      */
-        @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
@@ -212,9 +211,23 @@ public class AdmissionFullRecord implements Serializable{
     private String province;
 
     /**
+     * 报到状态: 已报到 暂缓报到 放弃入学资格 参军入伍
+     */
+    private String registrationStatus;
+
+    /**
+     * 报到备注
+     */
+    private String registrationRemark;
+
+    /**
+     * 学号
+     */
+    private String studentNo;
+
+    /**
      * 备注
      */
     private String remark;
-
 
 }

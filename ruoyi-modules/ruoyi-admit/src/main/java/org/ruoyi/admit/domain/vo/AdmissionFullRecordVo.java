@@ -7,14 +7,11 @@ import lombok.Data;
 import org.ruoyi.admit.domain.AdmissionFullRecord;
 import org.ruoyi.common.core.utils.IdCardMaskUtil;
 import org.ruoyi.common.core.utils.PhoneMaskUtil;
-import org.ruoyi.common.excel.annotation.ExcelDictFormat;
-import org.ruoyi.common.excel.convert.ExcelDictConvert;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 
 /**
  * 录取数据源视图对象 admission_full_record
@@ -216,11 +213,28 @@ public class AdmissionFullRecordVo implements Serializable {
     private String photoFilename;
 
     /**
+     * 报到状态
+     */
+    @ExcelProperty(value = "报到状态")
+    private String registrationStatus;
+
+    /**
+     * 报到备注
+     */
+    @ExcelProperty(value = "报到备注")
+    private String registrationRemark;
+
+    /**
+     * 学号
+     */
+    @ExcelProperty(value = "学号")
+    private String studentNo;
+
+    /**
      * 备注
      */
     @ExcelProperty(value = "备注")
     private String remark;
-
 
     public String getIdCard() {
         return IdCardMaskUtil.mask(idCard);

@@ -207,4 +207,9 @@ public class AdmissionFullRecordBo implements Serializable {
      * 备注
      */
     private String remark;
+
+    /**
+     * 报到状态
+     */
+    private String registrationStatus;
 }

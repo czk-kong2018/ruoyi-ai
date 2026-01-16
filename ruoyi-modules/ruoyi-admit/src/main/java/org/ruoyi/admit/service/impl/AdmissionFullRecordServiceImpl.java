@@ -75,6 +75,7 @@ public class AdmissionFullRecordServiceImpl implements AdmissionFullRecordServic
         lqw.likeRight(StringUtils.isNotBlank(bo.getPoliticalStatus()), AdmissionFullRecord::getPoliticalStatus, bo.getPoliticalStatus());
         lqw.likeRight(StringUtils.isNotBlank(bo.getProvince()), AdmissionFullRecord::getProvince, bo.getProvince());
         lqw.eq(StringUtils.isNotBlank(bo.getIsAdjusted()), AdmissionFullRecord::getIsAdjusted, bo.getIsAdjusted());
+        lqw.eq(StringUtils.isNotBlank(bo.getRegistrationStatus()), AdmissionFullRecord::getRegistrationStatus, bo.getRegistrationStatus());
         return lqw;
     }
 
