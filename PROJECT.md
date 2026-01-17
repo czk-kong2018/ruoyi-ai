@@ -1,5 +1,5 @@
 
-# RuoYi-AI 项目约定（供 Cursor 使用）
+# RuoYi-AI 项目约定
 
 ## 项目结构
 
