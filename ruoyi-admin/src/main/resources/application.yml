@@ -187,6 +187,7 @@ mybatis-plus:
   mapperLocations: 
     - classpath*:mapper/**/*Mapper.xml
     - classpath*:admit/*Mapper.xml
+    - classpath*:plan/*Mapper.xml
   # 实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: org.ruoyi.**.domain
   # 启动时是否检查 MyBatis XML 文件的存在，默认不检查

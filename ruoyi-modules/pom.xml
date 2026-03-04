@@ -27,6 +27,7 @@
         <module>ruoyi-aihuman</module>
         <module>ruoyi-workflow</module>
         <module>ruoyi-admit</module>
+        <module>ruoyi-plan</module>
     </modules>
 
     <properties>
